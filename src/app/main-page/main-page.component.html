@@ -2,26 +2,56 @@
   <h1 class="title">Check Your Password!</h1>
   <div class="wrapper">
     <form [formGroup]="form" class="form">
-      <h4 class="subtitle">Please, enter your password...</h4>
+      <h4 class="subtitle">Please, enter your password here...</h4>
       <mat-form-field class="form__password">
         <mat-label class="form__label">Password</mat-label>
-        <input formControlName="password" matInput class="form__input" />
+        <input
+          (input)="checkStrength()"
+          formControlName="password"
+          matInput
+          class="form__input"
+        />
       </mat-form-field>
-      <div class="password__simple password">
-        <h3>It's a simple password</h3>
-        <p>
-          (password must be at least 8 in length and has only letters, numbers
+      <div
+        class="password"
+        [ngClass]="{
+          red: (password?.touched && password?.invalid) || password?.dirty,
+          orange: count === 1,
+          yellow: count === 2,
+          green: count === 3
+        }"
+      >
+        <h3 *ngIf="password?.invalid; else valid">It's an invalid password</h3>
+        <ng-template #valid>
+          <h3>It's a simple password</h3>
+        </ng-template>
+        <p *ngIf="password?.invalid; else validText">
+          (password must be at least 8 in length and has letters, numbers
           or symbols)
         </p>
+        <ng-template #validText>
+          <p>(password has only letters, numbers or symbols)</p>
+        </ng-template>
       </div>
-      <div class="password__middle">
+      <div
+        class="password"
+        [ngClass]="{
+          yellow: count === 2,
+          green: count === 3
+        }"
+      >
         <h3>It's a middle password</h3>
         <p>
           (password has a combination of: letters-symbols, numbers-symbols or
           letters-numbers)
         </p>
       </div>
-      <div class="password__strong">
+      <div
+        class="password"
+        [ngClass]="{
+          green: count === 3
+        }"
+      >
         <h3>It's a strong password</h3>
         <p>(password has a letters, symbols and numbers)</p>
       </div>

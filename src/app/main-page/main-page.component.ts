@@ -1,15 +1,28 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Subscription } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss'],
 })
-export class MainPageComponent implements OnInit, OnDestroy {
+export class MainPageComponent implements OnInit {
   public form: FormGroup;
-  public formSubj$: Subscription;
+  public count: number;
+  private regExpObj = {
+    letters: /[a-zA-z]/,
+    numbers: /\d/,
+    symbols: /[!@#$%^&*]/,
+  };
+
+  // Add responsive design
+  // Add github pages
+  // Work from valid messages
 
   constructor(private fb: FormBuilder) {}
 
@@ -19,15 +32,26 @@ export class MainPageComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      password: ['', [Validators.required, Validators.minLength(8)]],
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(8),
+      ]),
     });
 
-    this.formSubj$ = this.form.valueChanges.subscribe((value) =>
-      console.log(value.password)
-    );
+    this.checkStrength();
   }
 
-  ngOnDestroy(): void {
-    this.formSubj$.unsubscribe();
+  checkStrength() {
+    this.count = 0;
+    const value = this.password?.value;
+
+    if (value.length < 8) {
+      return;
+    }
+
+    const regExpVal = Object.values(this.regExpObj);
+    regExpVal.forEach((el) => {
+      if (el.test(value)) this.count++;
+    });
   }
 }
