@@ -10,7 +10,7 @@ export const TITLES_TEXT: TemplateText = {
 
 export const INFO_TEXT: TemplateText = {
   invalid:
-    '(password must be at least 8 characters long and must contain only english letters, numbers or symbols)',
+    '(password must be at least 8 characters long and must contain only english letters, numbers or symbols (!@#$%^&*))',
   simple: '(password has only letters numbers or symbols)',
   middle:
     '(password contains a combination of: letters-numbers, letters-symbols or symbols-numbers)',

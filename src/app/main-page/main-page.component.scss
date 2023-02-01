@@ -1,15 +1,8 @@
 @media (min-width: 320px) {
   .container {
-    padding: 20px;
-  }
-
-  .wrapper {
     display: grid;
+    margin: 20px auto;
     place-items: center;
-  }
-
-  .title {
-    padding: 12px;
   }
 
   .subtitle {
@@ -47,17 +40,6 @@
 }
 
 @media (min-width: 768px) {
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .title {
-    padding: 40px 12px;
-    max-width: 450px;
-    margin: 0 auto;
-  }
-
   .form {
     width: 450px;
     gap: 25px;

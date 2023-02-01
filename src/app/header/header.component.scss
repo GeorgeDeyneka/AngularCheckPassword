@@ -1,0 +1,13 @@
+@media (min-width: 320px) {
+  .container {
+    background-color: #151515;
+    min-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .title {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+}
