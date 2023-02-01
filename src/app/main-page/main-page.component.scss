@@ -27,40 +27,12 @@
       color: #a1a1a1;
     }
 
-    &__password {
+    &__field {
       background-color: #23242a;
       padding: 10px;
       border-radius: 10px;
       font-size: 16px;
     }
-  }
-
-  .password {
-    border-radius: 10px;
-    padding: 10px;
-    background-color: #23242a;
-    outline: 2px solid #a1a1a1;
-    opacity: 0.3;
-  }
-
-  .red {
-    outline: 2px solid #e24848;
-    opacity: 1;
-  }
-
-  .orange {
-    outline: 2px solid #fe6822;
-    opacity: 1;
-  }
-
-  .yellow {
-    outline: 2px solid #f0e74b;
-    opacity: 1;
-  }
-
-  .green {
-    outline: 2px solid #5ae248;
-    opacity: 1;
   }
 }
 

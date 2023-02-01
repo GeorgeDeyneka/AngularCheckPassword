@@ -17,11 +17,9 @@ import { TemplateText } from '../models/template-text.interface';
 export class MainPageComponent implements OnInit {
   public form: FormGroup;
   public count: number;
-  private regExpObj: RegExpObj = REG_EXP_OBJ
+  private regExpObj: RegExpObj = REG_EXP_OBJ;
   public titlesText: TemplateText = TITLES_TEXT;
   public infoText: TemplateText = INFO_TEXT;
-
-  // Work for components
 
   constructor(private fb: FormBuilder) {}
 
