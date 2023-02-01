@@ -1,12 +1,30 @@
 <main class="container">
   <h1 class="title">Check Your Password!</h1>
-  <div class="">
+  <div class="wrapper">
     <form [formGroup]="form" class="form">
-      <mat-form-field class="form form__password">
-        <mat-label>Password</mat-label>
+      <h4 class="subtitle">Please, enter your password...</h4>
+      <mat-form-field class="form__password">
+        <mat-label class="form__label">Password</mat-label>
         <input formControlName="password" matInput class="form__input" />
       </mat-form-field>
+      <div class="password__simple password">
+        <h3>It's a simple password</h3>
+        <p>
+          (password must be at least 8 in length and has only letters, numbers
+          or symbols)
+        </p>
+      </div>
+      <div class="password__middle">
+        <h3>It's a middle password</h3>
+        <p>
+          (password has a combination of: letters-symbols, numbers-symbols or
+          letters-numbers)
+        </p>
+      </div>
+      <div class="password__strong">
+        <h3>It's a strong password</h3>
+        <p>(password has a letters, symbols and numbers)</p>
+      </div>
     </form>
   </div>
-  <p>text</p>
 </main>

@@ -1,6 +1,5 @@
 @import "./styles/reset.scss";
 @import "./styles/typography.scss";
-@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 body {
   font-family: "Raleway";
@@ -8,6 +7,3 @@ body {
   background-color: #1c1c1e;
   color: #fff;
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
