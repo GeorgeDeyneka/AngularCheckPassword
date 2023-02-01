@@ -1,28 +1,27 @@
 @media (min-width: 320px) {
   .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 20px;
   }
 
   .wrapper {
     display: grid;
     place-items: center;
-    height: 60vh;
   }
 
   .title {
-    padding: 40px;
+    padding: 12px;
   }
 
   .subtitle {
     padding: 0px 12px;
+    color: #c0c1c1;
   }
 
   .form {
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    width: 450px;
+    gap: 15px;
+    max-width: 450px;
 
     &__label {
       color: #a1a1a1;
@@ -73,4 +72,22 @@
 
 ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
   background-color: inherit;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .title {
+    padding: 40px 12px;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  .form {
+    width: 450px;
+    gap: 25px;
+  }
 }

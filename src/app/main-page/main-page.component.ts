@@ -5,6 +5,9 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { INFO_TEXT, REG_EXP_OBJ, TITLES_TEXT } from '../data/state';
+import { RegExpObj } from '../models/reg-exp-obj.interface';
+import { TemplateText } from '../models/template-text.interface';
 
 @Component({
   selector: 'app-main-page',
@@ -14,15 +17,11 @@ import {
 export class MainPageComponent implements OnInit {
   public form: FormGroup;
   public count: number;
-  private regExpObj = {
-    letters: /[a-zA-z]/,
-    numbers: /\d/,
-    symbols: /[!@#$%^&*]/,
-  };
+  private regExpObj: RegExpObj = REG_EXP_OBJ
+  public titlesText: TemplateText = TITLES_TEXT;
+  public infoText: TemplateText = INFO_TEXT;
 
-  // Add responsive design
-  // Add github pages
-  // Work from valid messages
+  // Work for components
 
   constructor(private fb: FormBuilder) {}
 

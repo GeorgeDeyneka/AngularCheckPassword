@@ -1,5 +1,5 @@
 <main class="container">
-  <h1 class="title">Check Your Password!</h1>
+  <h1 class="title">Password Check App</h1>
   <div class="wrapper">
     <form [formGroup]="form" class="form">
       <h4 class="subtitle">Please, enter your password here...</h4>
@@ -21,16 +21,15 @@
           green: count === 3
         }"
       >
-        <h3 *ngIf="password?.invalid; else valid">It's an invalid password</h3>
+        <h3 *ngIf="password?.invalid; else valid">{{ titlesText.invalid }}</h3>
         <ng-template #valid>
-          <h3>It's a simple password</h3>
+          <h3>{{ titlesText.simple }}</h3>
         </ng-template>
         <p *ngIf="password?.invalid; else validText">
-          (password must be at least 8 in length and has letters, numbers
-          or symbols)
+          {{ infoText.invalid }}
         </p>
         <ng-template #validText>
-          <p>(password has only letters, numbers or symbols)</p>
+          <p>{{ infoText.simple }}</p>
         </ng-template>
       </div>
       <div
@@ -40,10 +39,9 @@
           green: count === 3
         }"
       >
-        <h3>It's a middle password</h3>
+        <h3>{{ titlesText.middle }}</h3>
         <p>
-          (password has a combination of: letters-symbols, numbers-symbols or
-          letters-numbers)
+          {{ infoText.middle }}
         </p>
       </div>
       <div
@@ -52,8 +50,8 @@
           green: count === 3
         }"
       >
-        <h3>It's a strong password</h3>
-        <p>(password has a letters, symbols and numbers)</p>
+        <h3>{{ titlesText.strong }}</h3>
+        <p>{{ infoText.strong }}</p>
       </div>
     </form>
   </div>
