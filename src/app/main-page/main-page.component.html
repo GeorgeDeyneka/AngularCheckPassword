@@ -1,45 +1,43 @@
 <app-header></app-header>
 <main class="container">
-    <form [formGroup]="form" class="form">
-      <h4 class="subtitle">Please, enter your password here...</h4>
-      <mat-form-field class="form__field">
-        <mat-label class="form__label">Password</mat-label>
-        <input
-          (input)="checkStrength()"
-          formControlName="password"
-          matInput
-          class="form__input"
-        />
-      </mat-form-field>
+  <form [formGroup]="form" class="form">
+    <h4 class="subtitle">Please, enter your password here...</h4>
+    <mat-form-field class="form__field">
+      <mat-label class="form__label">Password</mat-label>
+      <input
+        (input)="checkStrength()"
+        formControlName="password"
+        matInput
+        class="form__input"
+      />
+    </mat-form-field>
 
-      <app-info-card
-        [myNgClass]="{
-          red: (password?.touched && password?.invalid) || password?.dirty,
-          orange: count === 1,
-          yellow: count === 2,
-          green: count === 3
-        }"
-        [titleText]="password?.invalid ? titlesText.invalid : titlesText.simple"
-        [descriptionText]="
-          password?.invalid ? infoText.invalid : infoText.simple
-        "
-      ></app-info-card>
+    <app-info-card
+      [myNgClass]="{
+        red: (password?.touched && password?.invalid) || password?.dirty,
+        orange: count === 1,
+        yellow: count === 2,
+        green: count === 3
+      }"
+      [titleText]="password?.dirty && !count ? titlesText.invalid : titlesText.simple"
+      [descriptionText]="password?.dirty && !count ? infoText.invalid : infoText.simple"
+    ></app-info-card>
 
-      <app-info-card
-        [myNgClass]="{
-          yellow: count === 2,
-          green: count === 3
-        }"
-        [titleText]="titlesText.middle"
-        [descriptionText]="infoText.middle"
-      ></app-info-card>
+    <app-info-card
+      [myNgClass]="{
+        yellow: count === 2,
+        green: count === 3
+      }"
+      [titleText]="titlesText.middle"
+      [descriptionText]="infoText.middle"
+    ></app-info-card>
 
-      <app-info-card
-        [myNgClass]="{
-          green: count === 3
-        }"
-        [titleText]="titlesText.strong"
-        [descriptionText]="infoText.strong"
-      ></app-info-card>
-    </form>
+    <app-info-card
+      [myNgClass]="{
+        green: count === 3
+      }"
+      [titleText]="titlesText.strong"
+      [descriptionText]="infoText.strong"
+    ></app-info-card>
+  </form>
 </main>

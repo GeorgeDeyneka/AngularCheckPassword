@@ -41,8 +41,9 @@ export class MainPageComponent implements OnInit {
   checkStrength() {
     this.count = 0;
     const value = this.password?.value;
+    const fullRegExp = /^[a-zA-Z\d!@#$%^&*]+$/;
 
-    if (value.length < 8) {
+    if (value.length < 8 || !fullRegExp.test(value)) {
       return;
     }
 
