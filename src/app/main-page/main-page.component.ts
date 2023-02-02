@@ -40,6 +40,10 @@ export class MainPageComponent implements OnInit, OnDestroy {
       ]),
     });
 
+    this.setFormActive();
+  }
+
+  setFormActive() {
     this.formSubj$ = this.form.valueChanges
       .pipe(debounceTime(250))
       .subscribe(() => {
