@@ -1,30 +1,41 @@
 <app-header></app-header>
 <main class="container">
   <form [formGroup]="form" class="form">
-    <h4 class="subtitle">Please, enter your password here...</h4>
+    <div class="subtitle__wrapper">
+      <ng-container *ngIf="!inputLength">
+        <h4 class="subtitle">Please, enter your password here...</h4>
+        <app-tooltip [textInfo]="infoText.invalid"></app-tooltip>
+      </ng-container>
+
+      <ng-container *ngIf="conditionInvalid">
+        <h4 class="subtitle">{{ titlesText.invalid }}</h4>
+        <app-tooltip [textInfo]="infoText.invalid"></app-tooltip>
+      </ng-container>
+
+      <h4 *ngIf="count === 3" class="subtitle">
+        Your password is very strong!
+      </h4>
+    </div>
+
     <mat-form-field class="form__field">
       <mat-label class="form__label">Password</mat-label>
-      <input
-        (input)="checkStrength()"
-        formControlName="password"
-        matInput
-        class="form__input"
-      />
+      <input formControlName="password" matInput class="form__input" />
     </mat-form-field>
 
     <app-info-card
       [myNgClass]="{
-        red: (password?.touched && password?.invalid) || password?.dirty,
+        red: conditionInvalid,
         orange: count === 1,
         yellow: count === 2,
         green: count === 3
       }"
-      [titleText]="password?.dirty && !count ? titlesText.invalid : titlesText.simple"
-      [descriptionText]="password?.dirty && !count ? infoText.invalid : infoText.simple"
+      [titleText]="titlesText.simple"
+      [descriptionText]="infoText.simple"
     ></app-info-card>
 
     <app-info-card
       [myNgClass]="{
+        red: conditionInvalid,
         yellow: count === 2,
         green: count === 3
       }"
@@ -34,6 +45,7 @@
 
     <app-info-card
       [myNgClass]="{
+        red: conditionInvalid,
         green: count === 3
       }"
       [titleText]="titlesText.strong"

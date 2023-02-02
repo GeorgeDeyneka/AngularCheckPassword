@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { InfoCardComponent } from './info-card/info-card.component';
 import { HeaderComponent } from '../header/header.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [MainPageComponent, HeaderComponent, InfoCardComponent],
@@ -16,6 +17,7 @@ import { HeaderComponent } from '../header/header.component';
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
+    SharedModule,
   ],
 })
 export class MainPageModule {}

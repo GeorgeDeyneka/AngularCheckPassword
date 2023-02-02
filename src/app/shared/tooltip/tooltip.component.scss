@@ -1,0 +1,42 @@
+.tooltip {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background-color: #23242a;
+  border-radius: 50%;
+  border: 0.5px solid #99e8b1;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-weight: 500;
+  cursor: pointer;
+
+  &:hover &__modal {
+    display: block;
+  }
+
+  &__modal {
+    position: absolute;
+    display: none;
+    z-index: 100;
+    animation: modal 300ms forwards;
+    background-color: #23242a;
+    border: 1px solid #c0c1c1;
+    color: #c0c1c1;
+    border-radius: 5px;
+    top: 30px;
+    right: 0;
+    padding: 10px;
+    min-width: 180px;
+    max-width: 220px;
+  }
+
+  @keyframes modal {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
