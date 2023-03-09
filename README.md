@@ -40,7 +40,89 @@ In the future, perhaps, the function of saving and displaying user-created combi
 - ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
 - ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
-<!-- USAGE -->
+## Usage
+
+### Main Page
+<div>
+  <ul>
+    <li>
+When you open the application, you see the main page.
+    </li>
+  </ul>
+  </br>
+<img src="demo-images/main-page.png" alt="main-page-demo" width="1000">
+</div>
+
+</br>
+
+---
+
+### Tooltip
+<div>
+  <ul>
+    <li>
+Before you start typing, you can access the hint by hovering over the question mark icon. Here are the basic rules for a valid password.
+    </li>
+  </ul>
+  </br>
+<img src="demo-images/tooltip.png" alt="tooltip-demo" width="1000">
+</div>
+
+</br>
+
+---
+
+### Simple password
+<div>
+  <ul>
+    <li>
+When you enter only letters, numbers or symbols, your password is considered simple and the corresponding field is highlighted.
+    </li>
+  </ul>
+  </br>
+<img src="demo-images/simple-pass.png" alt="simple-password-demo" width="1000">
+</div>
+
+</br>
+
+---
+
+### Middle password
+<div>
+  <ul>
+    <li>
+When you enter numbers-letters, letters-symbols, or numbers-symbols combinations, your password is considered a medium password.
+    </li>
+    </br>
+    <li>
+Two fields are highlighted as your value passes the complexity test of both a simple and medium password.
+    </li>
+  </ul>
+  </br>
+<img src="demo-images/middle-pass.png" alt="middle-password-demo" width="1000">
+</div>
+
+</br>
+
+---
+
+### Strong Password
+<div>
+  <ul>
+    <li>
+Your password is considered strong if you combine numbers, letters and symbols at the same time.
+    </li>
+    </br>
+    <li>
+Because your password is complex, that's why all three fields are highlighted.
+    </li>
+  </ul>
+  </br>
+<img src="demo-images/strong-pass.png" alt="strong-password-demo" width="1000">
+  </br>
+</div>
+
+</br>
 
 ## Contributing
 
